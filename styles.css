@@ -681,15 +681,21 @@ a:hover {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--spacing-lg);
-  padding-bottom: var(--spacing-4xl);
+  padding-bottom: var(--spacing-3xl);
+}
+
+@media (min-width: 900px) {
+  .services-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .service-category {
   background-color: white;
   border-radius: var(--radius-md);
-  padding: var(--spacing-lg);
+  padding: var(--spacing-md);
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--color-border-light);
   transition: all var(--transition-base);
@@ -703,9 +709,9 @@ a:hover {
 .service-category-header {
   display: flex;
   align-items: center;
-  gap: var(--spacing-md);
+  gap: var(--spacing-sm);
   margin-bottom: var(--spacing-md);
-  padding-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-sm);
   border-bottom: 2px solid var(--color-border-light);
 }
 
@@ -713,18 +719,43 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
+  width: 36px;
+  height: 36px;
   background-color: var(--color-primary);
   color: white;
   border-radius: var(--radius-sm);
   flex-shrink: 0;
 }
 
+.service-category-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
 .service-category h3 {
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-sm);
   font-weight: 600;
   color: var(--color-primary);
+}
+
+@media (min-width: 900px) {
+  .service-category {
+    padding: var(--spacing-lg);
+  }
+  
+  .service-category-header {
+    gap: var(--spacing-md);
+    padding-bottom: var(--spacing-md);
+  }
+  
+  .service-category-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .service-category h3 {
+    font-size: var(--font-size-base);
+  }
 }
 
 .service-list {
@@ -733,10 +764,11 @@ a:hover {
 
 .service-list li {
   position: relative;
-  padding: var(--spacing-sm) 0 var(--spacing-sm) var(--spacing-lg);
-  font-size: var(--font-size-sm);
+  padding: 6px 0 6px var(--spacing-md);
+  font-size: var(--font-size-xs);
   color: var(--color-text-light);
   border-bottom: 1px solid var(--color-border-light);
+  line-height: 1.5;
 }
 
 .service-list li:last-child {
@@ -749,10 +781,17 @@ a:hover {
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  width: 5px;
-  height: 5px;
+  width: 4px;
+  height: 4px;
   background-color: var(--color-accent);
   border-radius: 50%;
+}
+
+@media (min-width: 900px) {
+  .service-list li {
+    padding: var(--spacing-sm) 0 var(--spacing-sm) var(--spacing-md);
+    font-size: var(--font-size-sm);
+  }
 }
 
 /* ========================================
